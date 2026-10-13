@@ -1,0 +1,10 @@
+{
+  "name": "Kingdom Builders",
+  "short_name": "Kingdom Builders",
+  "description": "A Christian village stewardship game",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071d2b",
+  "theme_color": "#071d2b",
+  "icons": []
+}

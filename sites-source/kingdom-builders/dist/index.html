@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#071d2b" />
+  <meta name="description" content="Lead a growing village through faithful stewardship, service, wisdom, and mercy." />
+  <title>Kingdom Builders</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071d2b'/%3E%3Cpath d='M12 31 32 14l20 17v21H12Z' fill='%23f2bb4c'/%3E%3Cpath d='M28 26h8v26h-8zM22 34h20v7H22z' fill='%23071d2b'/%3E%3C/svg%3E" />
+  <style>
+    :root{--night:#071d2b;--blue:#0e3346;--teal:#116466;--gold:#f2bb4c;--cream:#fff8e7;--paper:#fffdf8;--ink:#122a34;--muted:#637881;--green:#2f8f68;--red:#c65449;--line:#d8e2df;--shadow:0 18px 45px rgba(2,25,36,.18)}
+    *{box-sizing:border-box}html{background:var(--night)}body{margin:0;min-height:100vh;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(155deg,#d7ebe6 0%,#fff8e7 58%,#f0dcae 100%)}button{font:inherit}.shell{width:min(920px,100%);margin:auto;min-height:100vh;padding:calc(12px + env(safe-area-inset-top)) 14px calc(28px + env(safe-area-inset-bottom))}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 2px 13px}.brand{display:flex;align-items:center;gap:11px}.seal{width:46px;height:46px;border-radius:14px;background:var(--night);color:var(--gold);display:grid;place-items:center;font-size:1.55rem;box-shadow:0 7px 18px rgba(7,29,43,.22)}h1{font-family:Georgia,serif;color:var(--night);font-size:1.4rem;margin:0}.day{color:var(--muted);font-weight:750;font-size:.9rem}.header-btn{border:1px solid rgba(7,29,43,.18);background:rgba(255,255,255,.65);color:var(--night);border-radius:11px;padding:9px 12px;font-weight:800;cursor:pointer}
+    .resources{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:10px}.resource{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.8);border-radius:15px;padding:10px 7px;text-align:center;box-shadow:0 5px 15px rgba(7,29,43,.08)}.resource span{display:block;font-size:1.15rem}.resource strong{display:block;color:var(--night);font-size:1.08rem;margin:2px 0}.resource small{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+    .board{display:grid;grid-template-columns:1.25fr .75fr;gap:10px}.village,.panel{background:rgba(255,253,248,.96);border:1px solid rgba(255,255,255,.9);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.village-top{background:linear-gradient(135deg,var(--night),var(--blue));color:#fff;padding:19px 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#a8c8cc;font-size:.72rem;font-weight:850}.village-top h2{font-family:Georgia,serif;margin:5px 0 4px;font-size:1.55rem}.village-top p{margin:0;color:#c8dcdd;font-size:.9rem}.map{padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;min-height:310px}.building{border:1px solid var(--line);background:#f8fbf8;border-radius:16px;padding:14px 8px;text-align:center;position:relative;transition:.2s}.building.locked{filter:grayscale(1);opacity:.5}.building.ready{border-color:var(--gold);box-shadow:inset 0 0 0 2px rgba(242,187,76,.22)}.building .emoji{font-size:2rem;display:block;margin-bottom:6px}.building b{font-size:.86rem;color:var(--night)}.building small{display:block;color:var(--muted);font-size:.72rem;margin-top:3px}.level{position:absolute;top:7px;right:8px;background:var(--night);color:#fff;border-radius:99px;padding:2px 6px;font-size:.64rem;font-weight:900}
+    .panel{padding:18px}.panel h3{font-family:Georgia,serif;margin:0 0 4px;color:var(--night);font-size:1.28rem}.panel .lead{color:var(--muted);font-size:.88rem;line-height:1.45;margin:0 0 15px}.task{border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:9px;background:#fff}.task-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.task b{font-size:.91rem}.cost{color:var(--muted);font-size:.75rem;font-weight:750;margin-top:4px}.do{border:0;background:var(--teal);color:#fff;border-radius:10px;padding:8px 10px;font-weight:800;cursor:pointer;white-space:nowrap}.do:disabled{opacity:.38;cursor:not-allowed}.verse{margin-top:13px;background:#eef6f2;border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:12px;color:#31514d;font-family:Georgia,serif;font-size:.91rem;line-height:1.45}.verse cite{display:block;font-family:Inter,sans-serif;font-size:.72rem;font-weight:800;margin-top:5px;color:#56726e;font-style:normal}
+    .event-card{position:fixed;inset:0;background:rgba(3,20,29,.72);display:grid;place-items:end center;padding:18px;z-index:20;backdrop-filter:blur(5px)}.event-card.hidden,.hidden{display:none!important}.event-inner{width:min(620px,100%);background:var(--paper);border-radius:24px;box-shadow:0 25px 70px rgba(0,0,0,.35);overflow:hidden;animation:rise .28s ease-out}@keyframes rise{from{transform:translateY(24px);opacity:0}}.event-art{background:linear-gradient(135deg,var(--night),var(--teal));color:#fff;padding:20px}.event-art span{font-size:2.2rem}.event-art h2{font-family:Georgia,serif;margin:8px 0 4px}.event-art p{margin:0;color:#d3e5e2;line-height:1.48}.choices{padding:15px}.choice{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:14px;padding:13px 14px;margin-bottom:9px;color:var(--ink);cursor:pointer}.choice b{display:block;margin-bottom:3px}.choice small{color:var(--muted);line-height:1.35}.choice:active{transform:scale(.99)}
+    .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(90px);background:var(--night);color:#fff;border-radius:13px;padding:11px 16px;font-weight:750;z-index:30;opacity:0;transition:.25s;box-shadow:0 10px 28px rgba(0,0,0,.25);max-width:88%;text-align:center}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}.welcome{position:fixed;inset:0;background:linear-gradient(150deg,#071d2b,#116466);z-index:40;color:white;display:grid;place-items:center;padding:22px}.welcome-card{width:min(520px,100%);text-align:center}.welcome-icon{font-size:4rem}.welcome h2{font-family:Georgia,serif;font-size:2.25rem;margin:12px 0 8px;color:var(--gold)}.welcome p{color:#d2e4df;line-height:1.6}.name{width:100%;border:1px solid #4f7b7d;background:#fff;color:var(--ink);border-radius:13px;padding:14px 15px;font:inherit;margin:12px 0}.start{width:100%;border:0;border-radius:13px;padding:14px;background:var(--gold);color:var(--night);font-weight:900;font-size:1rem;cursor:pointer}.results{text-align:left;background:rgba(255,255,255,.08);border-radius:14px;padding:13px 15px;margin:15px 0;font-size:.88rem}.results div{display:flex;justify-content:space-between;padding:4px 0}
+    @media(max-width:720px){.board{grid-template-columns:1fr}.resources{grid-template-columns:repeat(5,1fr)}.resource{padding:8px 3px}.resource small{font-size:.6rem}.map{min-height:auto}.panel{margin-bottom:12px}}@media(max-width:440px){.shell{padding-left:9px;padding-right:9px}.brand .day{display:none}.seal{width:40px;height:40px}.map{padding:11px;gap:6px}.building{padding:12px 4px}.building .emoji{font-size:1.7rem}.building b{font-size:.73rem}.building small{font-size:.62rem}.resources{gap:4px}.resource strong{font-size:.94rem}}
+  </style>
+</head>
+<body>
+<main class="shell" id="app">
+  <header><div class="brand"><div class="seal">✦</div><div><h1>Kingdom Builders</h1><div class="day">Week <span id="week">1</span> · <span id="villageName">New Hope</span></div></div></div><button class="header-btn" id="menuBtn">☰ Menu</button></header>
+  <section class="resources" aria-label="Village resources">
+    <div class="resource"><span>🍞</span><strong id="food">12</strong><small>Food</small></div>
+    <div class="resource"><span>🪙</span><strong id="funds">10</strong><small>Funds</small></div>
+    <div class="resource"><span>🤝</span><strong id="hands">6</strong><small>Hands</small></div>
+    <div class="resource"><span>♥</span><strong id="hope">50</strong><small>Hope</small></div>
+    <div class="resource"><span>✦</span><strong id="faith">0</strong><small>Faith</small></div>
+  </section>
+  <section class="board">
+    <div class="village">
+      <div class="village-top"><span class="eyebrow">Your village</span><h2 id="statusTitle">A place to serve</h2><p id="statusText">Meet needs, steward wisely, and help the community flourish.</p></div>
+      <div class="map" id="map"></div>
+    </div>
+    <aside class="panel"><h3>This week</h3><p class="lead">Choose one project, then respond to the need that follows.</p><div id="tasks"></div><div class="verse" id="verse"></div></aside>
+  </section>
+</main>
+
+<div class="welcome" id="welcome"><div class="welcome-card"><div class="welcome-icon">🏘️</div><h2>Kingdom Builders</h2><p>You have been entrusted with a small village. Its people need food, shelter, encouragement, and wise leadership. Build through service—not power.</p><input class="name" id="nameInput" maxlength="24" value="New Hope" aria-label="Village name" /><button class="start" id="startBtn">Begin serving</button></div></div>
+<div class="event-card hidden" id="event"><div class="event-inner"><div class="event-art"><span id="eventIcon">🌧️</span><h2 id="eventTitle"></h2><p id="eventText"></p></div><div class="choices" id="choices"></div></div></div>
+<div class="event-card hidden" id="menu"><div class="event-inner"><div class="event-art"><span>📖</span><h2>Village journal</h2><p>Your progress is saved on this device.</p></div><div class="choices"><div class="results"><div><span>Weeks served</span><b id="weeksServed">0</b></div><div><span>Families helped</span><b id="families">0</b></div><div><span>Faithfulness</span><b id="faithfulness">0</b></div></div><button class="choice" id="continueBtn"><b>Continue village</b><small>Return to this week’s work.</small></button><button class="choice" id="restartBtn"><b>Begin a new village</b><small>Erase this device’s current progress and start over.</small></button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const buildings=[
+  {id:'chapel',icon:'⛪',name:'Gathering House',unlock:1},{id:'garden',icon:'🌾',name:'Community Garden',unlock:1},{id:'pantry',icon:'🥖',name:'Food Pantry',unlock:1},{id:'workshop',icon:'🛠️',name:'Workshop',unlock:2},{id:'clinic',icon:'🩹',name:'Care Cottage',unlock:3},{id:'school',icon:'📚',name:'Learning House',unlock:4}
+];
+const projects=[
+  {name:'Harvest the garden',desc:'Prepare food for village families.',cost:{hands:2},gain:{food:8,hope:2},building:'garden'},
+  {name:'Stock the pantry',desc:'Turn supplies into ready food boxes.',cost:{food:3,hands:1},gain:{families:3,hope:5,faith:2},building:'pantry'},
+  {name:'Repair a neighbor’s roof',desc:'Use funds and skilled volunteers.',cost:{funds:3,hands:3},gain:{families:1,hope:8,faith:3},building:'workshop'},
+  {name:'Open the care cottage',desc:'Provide rest and practical care.',cost:{funds:4,hands:2},gain:{families:2,hope:7,faith:3},building:'clinic'},
+  {name:'Teach practical skills',desc:'Help neighbors prepare for tomorrow.',cost:{funds:2,hands:2},gain:{families:2,hope:6,faith:4},building:'school'},
+  {name:'Gather and encourage',desc:'Strengthen weary hearts together.',cost:{hands:1},gain:{hope:6,faith:3},building:'chapel'}
+];
+const events=[
+  {icon:'🌧️',title:'The storm',text:'A hard storm damaged three homes. Your pantry is low, but several families need help tonight.',choices:[
+    {label:'Open every available room',detail:'Give freely and trust the village to share the load.',delta:{food:-3,hands:-2,hope:9,faith:4,families:3}},
+    {label:'Help the most vulnerable first',detail:'Prioritize urgent needs and organize tomorrow’s repairs.',delta:{food:-2,hands:-1,hope:6,faith:3,families:2}},
+    {label:'Protect village supplies',detail:'Preserve resources, but people may feel abandoned.',delta:{hope:-8,faith:-2}}
+  ]},
+  {icon:'🧺',title:'A quiet need',text:'A proud father has missed work and quietly asks for groceries. Public attention would embarrass him.',choices:[
+    {label:'Deliver food privately',detail:'Serve with dignity and no announcement.',delta:{food:-3,hope:7,faith:5,families:1}},
+    {label:'Offer work for food',detail:'Meet the need while inviting him to contribute.',delta:{food:-2,hands:2,hope:4,faith:2,families:1}},
+    {label:'Ask him to return later',detail:'Save supplies for a larger distribution day.',delta:{hope:-5}}
+  ]},
+  {icon:'⚖️',title:'An old disagreement',text:'Two volunteers refuse to work together after a bitter dispute. The week’s project may fail.',choices:[
+    {label:'Pause and seek reconciliation',detail:'Lose time now to restore fellowship.',delta:{hands:-1,hope:8,faith:5}},
+    {label:'Give them separate jobs',detail:'Keep the work moving while lowering tension.',delta:{hope:3,faith:1}},
+    {label:'Remove both volunteers',detail:'End the disruption, but deepen the hurt.',delta:{hands:-2,hope:-6}}
+  ]},
+  {icon:'🌱',title:'Seeds for tomorrow',text:'You can eat the remaining seed grain today or plant it and wait for a future harvest.',choices:[
+    {label:'Plant most and share some',detail:'Balance today’s hunger with tomorrow’s provision.',delta:{food:-2,hope:5,faith:4,nextFood:7}},
+    {label:'Plant every seed',detail:'Make a costly investment in the future.',delta:{food:-4,hope:2,faith:5,nextFood:10}},
+    {label:'Use it all today',detail:'Relieve the immediate shortage.',delta:{food:5,hope:2,nextFood:-3}}
+  ]},
+  {icon:'🪙',title:'A generous gift',text:'A merchant offers a large donation, but asks that only his friends receive assistance.',choices:[
+    {label:'Decline the condition',detail:'Keep the ministry impartial.',delta:{funds:-1,hope:6,faith:6}},
+    {label:'Accept, but serve everyone',detail:'Invite the merchant into a fairer vision.',delta:{funds:6,hope:4,faith:3}},
+    {label:'Accept his terms',detail:'Gain resources at the cost of favoritism.',delta:{funds:8,hope:-7,faith:-5}}
+  ]},
+  {icon:'🕯️',title:'A weary volunteer',text:'Your most dependable helper is exhausted but insists on finishing the work.',choices:[
+    {label:'Send them home to rest',detail:'Protect the person, even if the project slows.',delta:{hands:-2,hope:6,faith:4}},
+    {label:'Work beside them',detail:'Share the burden personally.',delta:{hands:-1,hope:8,faith:4}},
+    {label:'Let them continue',detail:'Finish faster, but risk discouragement.',delta:{hands:1,hope:-5}}
+  ]}
+];
+const verses=[
+  ['Let all your things be done with charity.','1 Corinthians 16:14 · KJV'],
+  ['Bear ye one another’s burdens, and so fulfil the law of Christ.','Galatians 6:2 · KJV'],
+  ['Look not every man on his own things, but every man also on the things of others.','Philippians 2:4 · KJV'],
+  ['He that is faithful in that which is least is faithful also in much.','Luke 16:10 · KJV'],
+  ['As we have therefore opportunity, let us do good unto all men.','Galatians 6:10 · KJV']
+];
+const defaultState={name:'New Hope',week:1,food:12,funds:10,hands:6,hope:50,faith:0,families:0,nextFood:0,levels:{chapel:1,garden:1,pantry:1,workshop:0,clinic:0,school:0},history:[],started:false};
+let state=loadState();
+function loadState(){try{return {...defaultState,...JSON.parse(localStorage.getItem('kingdom-builders')||'{}')}}catch{return {...defaultState}}}
+function save(){localStorage.setItem('kingdom-builders',JSON.stringify(state))}
+function clamp(){['food','funds','hands','hope','faith'].forEach(k=>state[k]=Math.max(0,Math.min(k==='hope'?100:99,state[k])))}
+function canPay(cost){return Object.entries(cost).every(([k,v])=>state[k]>=v)}
+function apply(delta){Object.entries(delta).forEach(([k,v])=>state[k]=(state[k]||0)+v);clamp()}
+function render(){
+  document.querySelector('#week').textContent=state.week;document.querySelector('#villageName').textContent=state.name;
+  ['food','funds','hands','hope','faith'].forEach(k=>document.querySelector('#'+k).textContent=state[k]);
+  document.querySelector('#map').innerHTML=buildings.map(b=>{const lv=state.levels[b.id]||0,locked=!lv;return `<div class="building ${locked?'locked':lv>1?'ready':''}"><span class="level">${locked?'LOCKED':'LV '+lv}</span><span class="emoji">${b.icon}</span><b>${b.name}</b><small>${locked?'Unlocks through service':lv===1?'Serving':'Growing'}</small></div>`}).join('');
+  const available=projects.filter(p=>state.levels[p.building]>0).slice(0,4);
+  document.querySelector('#tasks').innerHTML=available.map((p,i)=>`<div class="task"><div class="task-head"><div><b>${p.name}</b><div class="cost">${formatCost(p.cost)} · ${p.desc}</div></div><button class="do" data-project="${projects.indexOf(p)}" ${canPay(p.cost)?'':'disabled'}>Serve</button></div></div>`).join('');
+  document.querySelectorAll('[data-project]').forEach(btn=>btn.onclick=()=>runProject(projects[+btn.dataset.project]));
+  const v=verses[(state.week-1)%verses.length];document.querySelector('#verse').innerHTML=`“${v[0]}”<cite>${v[1]}</cite>`;
+  document.querySelector('#weeksServed').textContent=Math.max(0,state.week-1);document.querySelector('#families').textContent=state.families;document.querySelector('#faithfulness').textContent=state.faith;
+  const stage=state.faith>=45?'A village that sends':state.faith>=25?'A village learning generosity':state.faith>=10?'Trust is taking root':'A place to serve';
+  document.querySelector('#statusTitle').textContent=stage;document.querySelector('#statusText').textContent=state.hope<25?'Hope is low. The village needs compassionate leadership.':'Meet needs, steward wisely, and help the community flourish.';
+  save();
+}
+function formatCost(c){return Object.entries(c).map(([k,v])=>`${v} ${k}`).join(' + ')}
+function runProject(p){if(!canPay(p.cost))return;Object.entries(p.cost).forEach(([k,v])=>state[k]-=v);apply(p.gain);state.history.push({week:state.week,project:p.name});toast(`${p.name} completed`);showEvent(events[(state.week-1)%events.length])}
+function showEvent(ev){document.querySelector('#eventIcon').textContent=ev.icon;document.querySelector('#eventTitle').textContent=ev.title;document.querySelector('#eventText').textContent=ev.text;document.querySelector('#choices').innerHTML=ev.choices.map((c,i)=>`<button class="choice" data-choice="${i}"><b>${c.label}</b><small>${c.detail}</small></button>`).join('');document.querySelector('#event').classList.remove('hidden');document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>resolveEvent(ev.choices[+b.dataset.choice]))}
+function resolveEvent(choice){apply(choice.delta);state.week++;state.food+=state.nextFood||0;state.nextFood=0;state.funds+=2;state.hands=Math.min(12,state.hands+2);unlockBuildings();document.querySelector('#event').classList.add('hidden');toast(choice.delta.faith>0?'Faithfulness grew through that choice.':'The village will remember that choice.');render()}
+function unlockBuildings(){if(state.faith>=8)state.levels.workshop=Math.max(1,state.levels.workshop);if(state.faith>=18)state.levels.clinic=Math.max(1,state.levels.clinic);if(state.faith>=30)state.levels.school=Math.max(1,state.levels.school);if(state.faith>=15)state.levels.pantry=2;if(state.faith>=35)state.levels.chapel=2}
+function toast(msg){const t=document.querySelector('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300)}
+document.querySelector('#startBtn').onclick=()=>{state.name=document.querySelector('#nameInput').value.trim()||'New Hope';state.started=true;document.querySelector('#welcome').classList.add('hidden');render()};
+document.querySelector('#menuBtn').onclick=()=>{render();document.querySelector('#menu').classList.remove('hidden')};document.querySelector('#continueBtn').onclick=()=>document.querySelector('#menu').classList.add('hidden');
+document.querySelector('#restartBtn').onclick=()=>{if(confirm('Begin a new village? Current progress on this device will be erased.')){localStorage.removeItem('kingdom-builders');state={...defaultState,levels:{...defaultState.levels},history:[]};document.querySelector('#menu').classList.add('hidden');document.querySelector('#nameInput').value='New Hope';document.querySelector('#welcome').classList.remove('hidden');render()}};
+if(state.started)document.querySelector('#welcome').classList.add('hidden');render();
+if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
+if(document.modelContext?.registerTool){
+  document.modelContext.registerTool({name:'read_village_status',title:'Read village status',description:'Read the current Kingdom Builders village resources and progress without changing the game.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:false},execute:()=>({name:state.name,week:state.week,food:state.food,funds:state.funds,volunteers:state.hands,hope:state.hope,faithfulness:state.faith,familiesHelped:state.families})});
+}
+</script>
+</body>
+</html>
